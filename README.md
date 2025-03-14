@@ -1,20 +1,27 @@
+# Final AI Project
 
-# Final Project AI
+## รายละเอียดโปรเจค
+- ทำนายโรคหัวใจด้วย Machine Learning (Logistic Regression)
+- จำแนกรูปภาพ CIFAR-10 ด้วย Deep Learning (CNN)
 
-โครงการนี้ใช้ Machine Learning และ Deep Learning
+## โครงสร้างไฟล์
+- models/: ไฟล์โมเดล AI
+- dataset/: ข้อมูล Dataset (หากมี)
+- streamlit_app/: เว็บ Streamlit
+- api_app/: API สำหรับโมเดล
 
-## โครงสร้างโปรเจค
-- app.py (โค้ดเว็บ Streamlit)
-- models/ (โหลดโมเดลจาก Hugging Face)
-- dataset/ (วาง dataset ที่นี่)
-- requirements.txt (ไฟล์สำหรับติดตั้ง dependency)
-
-## วิธีติดตั้งและรัน
-1. ติดตั้งไลบรารี
-```
+## วิธีใช้งาน
+### ติดตั้งไลบรารี
+```bash
 pip install -r requirements.txt
 ```
-2. รันเว็บ
+
+### รัน API
+```bash
+uvicorn api_app.api_app:app --reload --host 0.0.0.0 --port 8000
 ```
-streamlit run app.py
+
+### รัน Streamlit
+```bash
+streamlit run streamlit_app/app.py
 ```

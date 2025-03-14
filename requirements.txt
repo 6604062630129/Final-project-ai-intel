@@ -1,6 +1,9 @@
 streamlit
-joblib
+fastapi
+uvicorn
 tensorflow
-Pillow
+scikit-learn
 numpy
+joblib
+pillow
 requests
