@@ -1,5 +1,5 @@
 
-# Final Project IS2567-2
+# Final Project 
 โครงการนี้พัฒนา Machine Learning และ Neural Network สำหรับทำนายโรคหัวใจและจำแนกรูปภาพ CIFAR-10
 
 ## โครงสร้างไฟล์
