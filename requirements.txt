@@ -1,8 +1,6 @@
-
 streamlit
-scikit-learn
-tensorflow
-numpy
-pandas
-Pillow
 joblib
+tensorflow
+Pillow
+numpy
+requests

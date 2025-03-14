@@ -1,17 +1,20 @@
 
-# Final Project 
-โครงการนี้พัฒนา Machine Learning และ Neural Network สำหรับทำนายโรคหัวใจและจำแนกรูปภาพ CIFAR-10
+# Final Project AI
 
-## โครงสร้างไฟล์
-- app.py (เว็บ Streamlit)
-- models/ (โมเดล ML, CNN)
-- dataset/ (ไฟล์ dataset)
-- requirements.txt (ไลบรารีที่ใช้)
-- ML_Heart_Disease.ipynb (โค้ดเทรน ML)
-- CNN_CIFAR10.ipynb (โค้ดเทรน CNN)
+โครงการนี้ใช้ Machine Learning และ Deep Learning
+
+## โครงสร้างโปรเจค
+- app.py (โค้ดเว็บ Streamlit)
+- models/ (โหลดโมเดลจาก Hugging Face)
+- dataset/ (วาง dataset ที่นี่)
+- requirements.txt (ไฟล์สำหรับติดตั้ง dependency)
 
 ## วิธีติดตั้งและรัน
+1. ติดตั้งไลบรารี
 ```
 pip install -r requirements.txt
+```
+2. รันเว็บ
+```
 streamlit run app.py
 ```
