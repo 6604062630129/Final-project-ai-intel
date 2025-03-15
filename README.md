@@ -1,24 +1,43 @@
-# Final AI Project (Complete Version)
-## รายละเอียดโปรเจค
-- ทำนายโรคหัวใจด้วย Machine Learning (Logistic Regression)
-- จำแนกรูปภาพ CIFAR-10 ด้วย Neural Network (CNN)
 
-## โครงสร้างไฟล์
-- dataset/: ไฟล์ข้อมูลที่ใช้ในการ Train
-- models/: ไฟล์โมเดลที่ Train แล้ว
-- notebooks/: Jupyter Notebook สำหรับ Train โมเดล
-- streamlit_app/: โค้ดของเว็บ Streamlit
+# Electronics Price Predictor & Image Classifier
 
-## วิธีใช้งาน
-### ติดตั้งไลบรารี
-```
-pip install -r requirements.txt
-```
-### รัน Jupyter Notebook
-```
-jupyter notebook
-```
-### รัน Streamlit App
-```
-streamlit run streamlit_app/app.py
-```
+This is a Streamlit application that provides:
+- **Price Prediction** for electronic devices using a trained Random Forest model.
+- **Image Classification** to classify electronic devices using a CNN model.
+
+## Installation & Deployment
+
+1. Clone this repository:
+   ```sh
+   git clone <repo-url>
+   ```
+
+2. Install dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+
+3. Run the application:
+   ```sh
+   streamlit run app.py
+   ```
+
+## Models Used
+
+- **Random Forest Regressor** for price prediction.
+- **CNN (Convolutional Neural Network)** for image classification.
+
+## Dataset
+
+The dataset includes various electronic devices with attributes such as:
+- Brand (Apple, Samsung, Sony, etc.)
+- Category (Smartphone, Laptop, etc.)
+- Specifications (RAM, Storage, Battery, etc.)
+
+## Future Improvements
+
+- Enhance the dataset with real-world samples.
+- Improve CNN accuracy with better training and augmentation.
+
+### 🚀 Developed for ML Project Submission
+    
