@@ -94,14 +94,16 @@ elif menu == "🖼️ จำแนกประเภทสินค้าจา�
     st.subheader("🖼️ อัปโหลดรูปภาพสินค้าอิเล็กทรอนิกส์")
     st.write("สิ่งที่train มีสินค้าสามชนิดประกอบด้วย")
     col1, col2, col3 = st.columns(3)
+
     with col1:
-        st.image("/assets/Smartphone.jpg", caption="รูปที่ 1", use_container_width=True)
+        st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intel/main/assets/Smartphone.jpg", caption="Smartphone", use_container_width=True)
 
     with col2:
-        st.image("/assets/Laptop.jpg", caption="รูปที่ 2", use_container_width=True)
+        st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intel/main/assets/Laptop.jpg", caption="Laptop", use_container_width=True)
 
     with col3:
-        st.image("/assets/Tablet.jpg", caption="รูปที่ 3", use_container_width=True)
+        st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intelurrepo/main/assets/Tablet.jpg", caption="Tablet", use_container_width=True)
+
 
     uploaded_file = st.file_uploader("เลือกไฟล์ภาพ", type=["jpg", "png", "jpeg"])
     if uploaded_file is not None:
