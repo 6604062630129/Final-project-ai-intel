@@ -102,7 +102,7 @@ elif menu == "🖼️ จำแนกประเภทสินค้าจา�
         st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intel/main/assets/Laptop.jpg", caption="Laptop", use_container_width=True)
 
     with col3:
-        st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intelurrepo/main/assets/Tablet.jpg", caption="Tablet", use_container_width=True)
+        st.image("https://raw.githubusercontent.com/6604062630129/Final-project-ai-intel/main/assets/Tablet.jpg", caption="Tablet", use_container_width=True)
 
 
     uploaded_file = st.file_uploader("เลือกไฟล์ภาพ", type=["jpg", "png", "jpeg"])
