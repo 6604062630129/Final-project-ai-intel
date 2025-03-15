@@ -35,8 +35,8 @@ if menu == "📊 ทำนายราคาสินค้า":
     def preprocess_input(brand, category, year, ram, storage, battery, screen_size):
         data = pd.DataFrame([[year, ram, storage, battery, screen_size]], 
                              columns=["Year", "RAM", "Storage", "Battery", "Screen Size"])
-        brand_cols = ["Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi" , "Brand_Apple"]
-        category_cols = ["Category_Smartphone","Category_Tablet","Category_Laptop"]
+        brand_cols = ["Brand_Apple", "Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi" ]
+        category_cols = ["Category_Laptop", "Category_Smartphone","Category_Tablet"]
         for col in brand_cols:
             data[col] = 1 if col == f"Brand_{brand}" else 0
         for col in category_cols:
