@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -20,9 +19,16 @@ st.title("📱💻🔊 Electronics Price Prediction & Image Classification")
 st.write("ทำนายราคาสินค้าอิเล็กทรอนิกส์ และจำแนกประเภทจากภาพ")
 
 # Sidebar Menu
-menu = st.sidebar.radio("เลือกเมนู", ["📊 ทำนายราคาสินค้า", "🖼️ จำแนกประเภทสินค้าจากภาพ"])
+menu = st.sidebar.radio("เลือกเมนู", ["🏠 หน้าหลัก", "📊 ทำนายราคาสินค้า", "🖼️ จำแนกประเภทสินค้าจากภาพ", "📄 อธิบายโมเดล ML", "📄 อธิบายโมเดล CNN"])
 
-if menu == "📊 ทำนายราคาสินค้า":
+if menu == "🏠 หน้าหลัก":
+    st.header("📌 ข้อมูลโครงการ")
+    st.write("โครงการนี้มีวัตถุประสงค์เพื่อสร้างระบบที่สามารถทำนายราคาสินค้าอิเล็กทรอนิกส์และจำแนกประเภทสินค้าจากภาพ โดยใช้ Machine Learning (Random Forest) และ Deep Learning (CNN)")
+    st.write("**พัฒนาโดย:**")
+    name = st.text_input("ชื่อผู้พัฒนา")
+    st.write(f"ผู้พัฒนา: {name}")
+
+elif menu == "📊 ทำนายราคาสินค้า":
     st.sidebar.header("📌 ป้อนข้อมูลสินค้าของคุณ")
     brand = st.sidebar.selectbox("แบรนด์", ["Apple", "Samsung", "Sony", "Xiaomi", "Asus", "Dell", "HP", "Lenovo"])
     category = st.sidebar.selectbox("หมวดหมู่สินค้า", ["Smartphone", "Laptop", "Tablet"])
@@ -35,8 +41,8 @@ if menu == "📊 ทำนายราคาสินค้า":
     def preprocess_input(brand, category, year, ram, storage, battery, screen_size):
         data = pd.DataFrame([[year, ram, storage, battery, screen_size]], 
                              columns=["Year", "RAM", "Storage", "Battery", "Screen Size"])
-        brand_cols = ["Brand_Apple", "Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi" ]
-        category_cols = ["Category_Laptop", "Category_Smartphone","Category_Tablet"]
+        brand_cols = ["Brand_Apple", "Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi"]
+        category_cols = ["Category_Laptop", "Category_Smartphone", "Category_Tablet"]
         for col in brand_cols:
             data[col] = 1 if col == f"Brand_{brand}" else 0
         for col in category_cols:
@@ -61,9 +67,18 @@ elif menu == "🖼️ จำแนกประเภทสินค้าจา�
         
         prediction = cnn_model.predict(img_array)
         class_index = np.argmax(prediction)
-        categories = ["Smartphone", "Laptop", "Tablet", "Smartwatch", "Headphones"]
+        categories = ["Smartphone", "Laptop", "Tablet"]
         predicted_category = categories[class_index]
         
-        st.image(uploaded_file, caption=f"สินค้า: {predicted_category}", use_column_width=True)
+        st.image(uploaded_file, caption=f"สินค้า: {predicted_category}", use_container_width=True)
         st.success(f"🔍 ผลการจำแนก: {predicted_category}")
-    
+
+elif menu == "📄 อธิบายโมเดล ML":
+    st.header("📄 อธิบายโมเดล Machine Learning (Random Forest)")
+    st.write("โมเดล Random Forest ถูกใช้ในการทำนายราคาสินค้าอิเล็กทรอนิกส์ โดยใช้ข้อมูล เช่น แบรนด์ ประเภทสินค้า ปีที่ผลิต RAM, Storage, Battery และขนาดหน้าจอ")
+    st.write("เป็นโมเดล Ensemble Learning ที่ใช้การรวมผลลัพธ์จากหลาย Decision Trees เพื่อเพิ่มความแม่นยำ")
+
+elif menu == "📄 อธิบายโมเดล CNN":
+    st.header("📄 อธิบายโมเดล Convolutional Neural Network (CNN)")
+    st.write("โมเดล CNN ใช้สำหรับจำแนกประเภทสินค้าจากภาพถ่าย โดยจำแนกออกเป็น 3 ประเภท ได้แก่ Smartphone, Laptop, และ Tablet")
+    st.write("CNN สามารถดึงคุณลักษณะจากภาพและเรียนรู้ลักษณะเฉพาะของแต่ละประเภทสินค้าได้อย่างแม่นยำ")
