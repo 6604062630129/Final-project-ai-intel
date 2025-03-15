@@ -25,7 +25,7 @@ menu = st.sidebar.radio("เลือกเมนู", ["📊 ทำนายร
 if menu == "📊 ทำนายราคาสินค้า":
     st.sidebar.header("📌 ป้อนข้อมูลสินค้าของคุณ")
     brand = st.sidebar.selectbox("แบรนด์", ["Apple", "Samsung", "Sony", "Xiaomi", "Asus", "Dell", "HP", "Lenovo"])
-    category = st.sidebar.selectbox("หมวดหมู่สินค้า", ["Smartphone", "Laptop", "Tablet", "Smartwatch", "Headphones"])
+    category = st.sidebar.selectbox("หมวดหมู่สินค้า", ["Smartphone", "Laptop", "Tablet"])
     year = st.sidebar.slider("ปีที่ผลิต", 2015, 2024, 2020)
     ram = st.sidebar.selectbox("RAM (GB)", [4, 8, 16, 32])
     storage = st.sidebar.selectbox("Storage (GB)", [64, 128, 256, 512, 1024])
@@ -36,7 +36,7 @@ if menu == "📊 ทำนายราคาสินค้า":
         data = pd.DataFrame([[year, ram, storage, battery, screen_size]], 
                              columns=["Year", "RAM", "Storage", "Battery", "Screen Size"])
         brand_cols = ["Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi"]
-        category_cols = ["Category_Laptop", "Category_Smartphone", "Category_Smartwatch", "Category_Tablet"]
+        category_cols = ["Category_Laptop", "Category_Smartphone","Category_Tablet"]
         for col in brand_cols:
             data[col] = 1 if col == f"Brand_{brand}" else 0
         for col in category_cols:
