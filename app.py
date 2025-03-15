@@ -36,7 +36,7 @@ if menu == "📊 ทำนายราคาสินค้า":
         data = pd.DataFrame([[year, ram, storage, battery, screen_size]], 
                              columns=["Year", "RAM", "Storage", "Battery", "Screen Size"])
         brand_cols = ["Brand_Asus", "Brand_Dell", "Brand_HP", "Brand_Lenovo", "Brand_Samsung", "Brand_Sony", "Brand_Xiaomi"]
-        category_cols = ["Category_Laptop", "Category_Smartphone","Category_Tablet"]
+        category_cols = ["Category_Smartphone","Category_Tablet"]
         for col in brand_cols:
             data[col] = 1 if col == f"Brand_{brand}" else 0
         for col in category_cols:
@@ -44,7 +44,7 @@ if menu == "📊 ทำนายราคาสินค้า":
         return data
     
     input_data = preprocess_input(brand, category, year, ram, storage, battery, screen_size)
-    if st.sidebar.button("🔍 ทำนายราคา"):
+    if st.sidebar.button("ทำนายราคา"):
         predicted_price = rf_model.predict(input_data)[0]
         st.success(f"💰 ราคาที่คาดการณ์: {predicted_price:,.2f} บาท")
     
