@@ -89,15 +89,7 @@ elif menu == "📊 ทำนายราคาสินค้า":
 elif menu == "🖼️ จำแนกประเภทสินค้าจากภาพ":
     st.subheader("🖼️ อัปโหลดรูปภาพสินค้าอิเล็กทรอนิกส์")
     st.write("สิ่งที่train มีสินค้าสามชนิดประกอบด้วย")
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.image("/assets/Smartphone", caption="รูปที่ 1", use_container_width=True)
-
-    with col2:
-        st.image("/assets/Laptop", caption="รูปที่ 2", use_container_width=True)
-
-    with col3:
-        st.image("/assets/Tablet", caption="รูปที่ 3", use_container_width=True)
+    
 
     uploaded_file = st.file_uploader("เลือกไฟล์ภาพ", type=["jpg", "png", "jpeg"])
     if uploaded_file is not None:
