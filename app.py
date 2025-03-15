@@ -119,6 +119,15 @@ elif menu == "🖼️ จำแนกประเภทสินค้าจา�
         st.image(uploaded_file, caption=f"สินค้า: {predicted_category}", use_container_width=True)
         st.success(f"🔍 ผลการจำแนก: {predicted_category}")
 
+        st.subheader("📊 ความมั่นใจของโมเดล (Prediction Confidence)")
+
+        percentages = (prediction[0] * 100).round(2) 
+
+        for i in range(len(categories)):
+            st.write(f"- **{categories[i]}**: {percentages[i]} %")
+
+        st.success(f"🔍 ผลการจำแนก: **{predicted_category}** ด้วยความมั่นใจ {percentages[class_index]}%")
+
 elif menu == "📄 อธิบายโมเดล ML":
     st.header("📄 อธิบายโมเดล Machine Learning (Random Forest)")
     st.markdown("""
